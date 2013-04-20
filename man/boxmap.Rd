@@ -36,7 +36,7 @@ Objects of the class that basically list its elements
 }
 \author{George Owusu}
 \examples{
-
+\dontrun{
 source<- system.file("external", package = "mgraph")
 layer="farms"
 graph=boxmap(source,layer,attribute='Age',col='black',label="",factor="Sex")
@@ -49,6 +49,7 @@ data(meuse.all, package="gstat")
 boxmap(meuse.all,layer="nofile",attribute="zinc", col="light blue")
 #factorised box plot
 boxmap(meuse.all,layer="nofile",attribute="zinc", col="light blue",factor="lime")
+}
 }
 \references{Bivand, R. S., Pebesma, E. J., Gomez-Rubio, V. (2008) Applied Spatial Data Analysis with R. Springer
 Kabacoff, I. R. (2011) R in Action. Data Analysis and Graphics with R. Manning Publications Co}

@@ -8,7 +8,7 @@ object <- source
 }
 else{
 
-file=c(".csv",".txt",".tab",".dat")
+file=c("[.]csv$","[.]txt$","[.]tab$","[.]dat$")
 i=1
 nonspatial=0
 while (i <= length(file)) {
@@ -49,7 +49,7 @@ object <- readOGR(source, layer)
 }
 else{
 
-log=grep('.csv',file.type)
+log=grep('[.]csv$',file.type)
 if(length(log)>0)
 {
 file.type=file[i]

@@ -36,16 +36,7 @@ Objects of the class that basically list its elements
 }
 \author{George Owusu}
 \examples{
-#################################################################################
-#	#set the source and layer of the map for spatial attribute. 		#
-#	#Download the spatial files from www.openictghana.com/R/mgraph/farm.zip	#
-#	#unzip to a source or folder as shown below: 			        #
-#       source="C:/Users/george/Documents/Rpackages/graphmap/inst/external"	#
-#	layer = "farms"								#
-#	attribute="Sex"								#
-#	#bar chart								#
-#	barmap(source,layer,attribute)					        #
-#################################################################################
+\dontrun{
 source<- system.file("external", package = "mgraph")
 layer="farms"
 attribute="Variety"
@@ -53,8 +44,7 @@ graph=barmap(source,layer,type="simple",attribute=attribute,col='black',label=""
 summary(graph)
 print(graph)
 plot(graph)
-data(UScereal, package="MASS")
-barmap(UScereal,layer="nofile",attribute='mfr')
+}
 }
 \references{Bivand, R. S., Pebesma, E. J., Gomez-Rubio, V. (2008) Applied Spatial Data Analysis with R. Springer
 Kabacoff, I. R. (2011) R in Action. Data Analysis and Graphics with R. Manning Publications Co

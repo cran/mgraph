@@ -35,6 +35,7 @@ Objects of the class that basically list its elements
 }
 \author{George Owusu}
 \examples{
+\dontrun{
 #example one: using non spatial data
 source<- system.file("external", package = "mgraph")
 layer="farms"
@@ -47,6 +48,7 @@ plot(graph)
 #example two: using R object
 data(meuse.all, package="gstat")
 linemap(meuse.all,layer="nofile",attributes="zinc,copper",type="l")
+}
 }
 \references{Bivand, R. S., Pebesma, E. J., Gomez-Rubio, V. (2008) Applied Spatial Data Analysis with R. Springer
 Kabacoff, I. R. (2011) R in Action. Data Analysis and Graphics with R. Manning Publications Co}

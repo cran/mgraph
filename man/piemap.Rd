@@ -37,17 +37,7 @@ Objects of the class that basically list its elements
 }
 \author{George Owusu}
 \examples{
-#################################################################################
-#	#set the source and layer of the map for spatial attribute. 		#
-#	#Download the spatial files from www.openictghana.com/R/mgraph/farm.zip	#
-#	#unzip to a source or folder as shown below: 			        #
-#       source="C:/Users/george/Documents/Rpackages/graphmap/inst/external"	#
-#	layer = "farms"								#
-#	attribute="Sex"								#
-#	#bar chart								#
-#	piemap(source,layer,attribute)					        #
-#################################################################################
-
+\dontrun{
 #example one non spatial data
 source<- system.file("external", package = "mgraph")
 layer="farms"
@@ -61,7 +51,7 @@ plot(graph)
 data(meuse.all, package="gstat")
 piemap(source=meuse.all,layer="nofile",attribute="landuse")
 piemap(source=meuse.all,layer="nofile",attribute="lime")
-
+}
 }
 \references{Bivand, R. S., Pebesma, E. J., Gomez-Rubio, V. (2008) Applied Spatial Data Analysis with R. Springer 
 Kabacoff, I. R. (2011) R in Action. Data Analysis and Graphics with R. Manning Publications Co}
