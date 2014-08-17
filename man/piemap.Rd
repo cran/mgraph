@@ -49,21 +49,19 @@ Objects of the class that basically list its elements
 #################################################################################
 
 #example one non spatial data
-source="http://www.openictghana.com/map/mgraph/"
-layer="farms.csv"
+source<- system.file("external", package = "mgraph")
+layer="farms"
 attribute="Variety"
 graph=piemap(source, layer,type="annotated",attribute=attribute,col='black',label="")
 summary(graph)
 print(graph)
 plot(graph)
 
-#################################################################################
-#	#Example two with R object
-#	data(meuse.all, package="gstat")
-#	piemap(source=meuse.all,layer="nofile",attribute="landuse")
-#	piemap(source=meuse.all,layer="nofile",attribute="lime")
-#
-#################################################################################
+#Example two with R object
+data(meuse.all, package="gstat")
+piemap(source=meuse.all,layer="nofile",attribute="landuse")
+piemap(source=meuse.all,layer="nofile",attribute="lime")
+
 }
 \references{Bivand, R. S., Pebesma, E. J., Gomez-Rubio, V. (2008) Applied Spatial Data Analysis with R. Springer 
 Kabacoff, I. R. (2011) R in Action. Data Analysis and Graphics with R. Manning Publications Co}

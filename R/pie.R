@@ -1,6 +1,12 @@
 inpie <- function(source,layer='',attribute,type='',label='',col='')
 {
 #read data
+if(layer=="gisobject"||is.null(layer)||layer=="gisdata"||layer==""){
+object <- source
+
+}
+else{
+
 file=c(".csv",".txt",".tab",".dat")
 i=1
 nonspatial=0
@@ -54,7 +60,7 @@ object=read.table(thisfile,header=TRUE)
 }
 
 }
-
+}
 #pie chart Region
 slices=table(toupper(object[[attribute]]))
 pct <- round(slices/sum(slices)*100)

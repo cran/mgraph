@@ -36,34 +36,19 @@ Objects of the class that basically list its elements
 }
 \author{George Owusu}
 \examples{
-#########################################################################################################################################
-#	#set the source and layer of the map for spatial attribute. 								    	#
-#	#Download the spatial files from www.openictghana.com/R/mgraph/farm.zip								#
-#	#unzip to a source or folder as shown below: 			        							#
-#       source="C:/Users/george/Documents/Rpackages/graphmap/inst/external"								#
-#	layer = "farms"															#
-#	attribute="Age"															#
-#	#box plot															#
-#	figure3a=boxmap(source=source,layer=layer,attribute=attribute)									#
-#	figure3b=boxmap(source=source,layer=layer,attribute=attribute,type="notch",label="Notch 	Boxplot")			#
-#	figure3c=boxmap(source=source,layer=layer,attribute=attribute,type="notch",factor="Sex",label="Factorised Notch Box plot")	#
-#	figure3d=boxmap(source=source,layer=layer,attribute=attribute,type="simple",factor="Sex",label="Factorised Normal Box plot")	#
-#		        														#
-#########################################################################################################################################
-source="http://www.openictghana.com/map/mgraph/"
-layer="farms.csv"
+
+source<- system.file("external", package = "mgraph")
+layer="farms"
 graph=boxmap(source,layer,attribute='Age',col='black',label="",factor="Sex")
 summary(graph)
 print(graph)
 plot(graph)
-########################################################################################################################################
-#	#Example two with R object
-#	data(meuse.all, package="gstat")
-#	#simple box plot
-#	boxmap(meuse.all,layer="nofile",attribute="zinc", col="light blue")
-#	#factorised box plot
-#	boxmap(meuse.all,layer="nofile",attribute="zinc", col="light blue",factor="lime")
-#########################################################################################################################################
+#Example two with R object
+data(meuse.all, package="gstat")
+#simple box plot
+boxmap(meuse.all,layer="nofile",attribute="zinc", col="light blue")
+#factorised box plot
+boxmap(meuse.all,layer="nofile",attribute="zinc", col="light blue",factor="lime")
 }
 \references{Bivand, R. S., Pebesma, E. J., Gomez-Rubio, V. (2008) Applied Spatial Data Analysis with R. Springer
 Kabacoff, I. R. (2011) R in Action. Data Analysis and Graphics with R. Manning Publications Co}

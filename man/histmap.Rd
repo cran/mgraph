@@ -51,20 +51,18 @@ Objects of the class that basically list its elements
 #																	#
 #		        														#
 #########################################################################################################################################
-source="http://www.openictghana.com/map/mgraph/"
-layer="farms.csv"
-graph=histmap(source, layer,attribute='Age',col='black',label="")
+source<- system.file("external", package = "mgraph")
+layer="farms"
+graph=histmap(source, layer,attribute='Age',col='blue',label="")
 summary(graph)
 print(graph)
 plot(graph)
 
-#######################################################################################################################################
-#	#example 2: using R object
-#	data(meuse.all, package="gstat")
-#	histmap(meuse.all,layer="nofile",attribute="zinc", col="light blue")
-#	#Histogram with normal distribtion 
-#	histmap(meuse.all,layer="nofile",attribute="zinc", col="light blue",type="normal")
-#######################################################################################################################################
+#example 2: using R object
+data(meuse.all, package="gstat")
+histmap(meuse.all,layer="nofile",attribute="zinc", col="light blue")
+#Histogram with normal distribtion 
+histmap(meuse.all,layer="nofile",attribute="zinc", col="light blue",type="normal")
 }
 \references{Bivand, R. S., Pebesma, E. J., Gomez-Rubio, V. (2008) Applied Spatial Data Analysis with R. Springer
 Kabacoff, I. R. (2011) R in Action. Data Analysis and Graphics with R. Manning Publications Co

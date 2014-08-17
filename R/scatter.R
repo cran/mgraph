@@ -2,6 +2,12 @@ inscatter <- function(source,layer='',attributes,type='',label='',col='')
 {
 
 #read data
+if(layer=="gisobject"||is.null(layer)||layer=="gisdata"||layer==""){
+object <- source
+
+}
+else{
+
 file=c(".csv",".txt",".tab",".dat")
 i=1
 nonspatial=0
@@ -55,7 +61,7 @@ object=read.table(thisfile,header=TRUE)
 }
 
 }
-
+}
 #scatter region
 #split
 attribute=strsplit(attributes,",")

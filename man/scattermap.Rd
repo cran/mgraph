@@ -36,34 +36,17 @@ Objects of the class that basically list its elements
 }
 \author{George Owusu}
 \examples{
-#########################################################################################################################################
-#	#set the source and layer of the map for spatial attribute. 								    	#
-#	#Download the spatial files from www.openictghana.com/R/mgraph/farm.zip								#
-#	#unzip to a source or folder as shown below: 			        							#
-#       source="C:/Users/george/Documents/Rpackages/graphmap/inst/external"								#
-#	layer = "farms"															#
-#	attributes="Age,FArea"														#
-#																	#
-#	figure4a=scattermap(source,layer,attributes,type="l",col='black',label="")							#
-#	figure4b=scattermap(source,layer,attributes,type="p",col='black',label="")							#
-#	figure4c=scattermap(source,layer,attributes,type="o",col='black',label="")							#
-#	figure4d=scattermap(source,layer,attributes,type="S",col='black',label="")							#
-#																	#
-#		        														#
-#########################################################################################################################################
-source="http://www.openictghana.com/map/mgraph/"
-layer="farms.csv"
+source<- system.file("external", package = "mgraph")
+layer="farms"
 attributes='Age,FArea'
 graph=scattermap(source,layer,attributes,type="l",col='black',label="")
 summary(graph)
 print(graph)
+
+#example two: using R object
+data(meuse.all, package="gstat")
+scattermap(meuse.all,layer="nofile",attributes="zinc,copper")
 plot(graph)
-#####################################################################################################################################
-#	#example two: using R object
-#	data(meuse.all, package="gstat")
-#	scattermap(meuse.all,layer="nofile",attributes="zinc,copper")
-#	plot(graph)
-######################################################################################################################################
 }
 \references{Bivand, R. S., Pebesma, E. J., Gomez-Rubio, V. (2008) Applied Spatial Data Analysis with R. Springer
 Kabacoff, I. R. (2011) R in Action. Data Analysis and Graphics with R. Manning Publications Co}

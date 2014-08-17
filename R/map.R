@@ -1,8 +1,15 @@
 inmap <- function(source,layer='',attribute,type='',label='',col='',symbol='')
 {
 #read data
+#read data
+if(layer=="gisobject"||is.null(layer)||layer=="gisdata"||layer==""){
+object <- source
+
+}
+else{
 
 object <- readOGR(source, layer)
+}
 
 #map chart Region
 slices=object[[attribute]]
@@ -12,7 +19,6 @@ xlab=toupper(attribute)
 if(label==""){
 main=paste("Map of", attribute)
 }
-
 
 #define colours
 colour=col
@@ -31,6 +37,10 @@ scot_SP_LL <- SpatialPointsDataFrame(coordinates(object), proj4string = CRS(as.c
 }
 else{
 plot(spplot(object[attribute],main=main,scales = list(draw = TRUE)))
+print(spplot(object,attribute,main=main,as.table = TRUE,scales = list(draw = FALSE)))
+print(spplot(object,attribute,main=main,as.table = TRUE,scales = list(draw = TRUE)))
+
+
 }
 
 data=object[[attribute]]
@@ -48,7 +58,6 @@ map.default<-function(source,layer='',attribute,type='',label="",col='',symbol='
 factor<-inmap(source,layer,attribute,type,label,col,symbol)
 
 factor$call<-match.call()
-
 class(factor)<-"map"
 factor
 }
@@ -83,6 +92,8 @@ plot.map<-function(x,...)
 {
 map(source=x$source,layer=x$layer,attribute=x$attribute,type=x$type,col=x$colour,label=x$label)
 }
+#attribute=("F_AREA","Sex")
+#attribute=c("F_AREA")
 
-#graph=map("E:/geokings/advancegis/R-process","KwabibiremAtiwa",attribute='PlantPop',type="points",label="Plant popu",col="red")
+#graph=map("E:/geokings/advancegis/R-process","KwabibiremAtiwa",attribute=attribute,type="",label="Plant popu",col="red")
 

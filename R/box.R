@@ -1,6 +1,11 @@
 inbox <- function(source,layer='',attribute,type='',label='',col='',factor="")
 {
 #read data
+if(layer=="gisobject"||is.null(layer)||layer=="gisdata"||layer==""){
+object <- source
+}
+else{
+
 file=c(".csv",".txt",".tab",".dat")
 i=1
 nonspatial=0
@@ -53,6 +58,7 @@ else{
 object=read.table(thisfile,header=TRUE)
 }
 
+}
 }
 #box chart Region
 slices=object[[attribute]]

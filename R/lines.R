@@ -1,6 +1,12 @@
 inline <- function(source,layer='',attributes,type='l',label='',col='')
 {
 #read data
+#read data
+if(layer=="gisobject"||is.null(layer)||layer=="gisdata"||layer==""){
+object <- source
+}
+else{
+
 file=c(".csv",".txt",".tab",".dat")
 i=1
 nonspatial=0
@@ -54,7 +60,7 @@ object=read.table(thisfile,header=TRUE)
 }
 
 }
-
+}
 #line chart Region
 
 #split
